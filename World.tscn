@@ -1,153 +1,61 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32, 32 )
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 32 )
+[ext_resource path="res://Hills Layer 01.png" type="Texture" id=1]
+[ext_resource path="res://Sprite.gd" type="Script" id=2]
+[ext_resource path="res://Hills Layer 02.png" type="Texture" id=3]
+[ext_resource path="res://Hills Layer 03.png" type="Texture" id=4]
+[ext_resource path="res://Hills Layer 04.png" type="Texture" id=5]
+[ext_resource path="res://Hills Layer 05.png" type="Texture" id=6]
+[ext_resource path="res://Hills Layer 06.png" type="Texture" id=7]
 
 [node name="World" type="Node2D"]
 
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 544, 288 )
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="hills_layers" type="Node2D" parent="."]
+position = Vector2( 510, 300 )
+scale = Vector2( 2.2, 2.2 )
 
-[node name="Sprite" type="Sprite" parent="Player"]
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource( 2 )
-
-[node name="Walls" type="Node" parent="."]
-
-[node name="Wall" type="StaticBody2D" parent="Walls"]
+[node name="hills_layer1" type="Sprite" parent="hills_layers"]
 editor/display_folded = true
-position = Vector2( 544, 480 )
-__meta__ = {
-"_edit_group_": true
-}
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="Walls/Wall"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
+[node name="Tween" type="Tween" parent="hills_layers/hills_layer1"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall"]
-shape = SubResource( 1 )
-
-[node name="Wall2" type="StaticBody2D" parent="Walls"]
+[node name="hills_layer2" type="Sprite" parent="hills_layers"]
 editor/display_folded = true
-position = Vector2( 608, 480 )
-__meta__ = {
-"_edit_group_": true
-}
+texture = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="Walls/Wall2"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
+[node name="Tween" type="Tween" parent="hills_layers/hills_layer2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall2"]
-shape = SubResource( 1 )
-
-[node name="Wall3" type="StaticBody2D" parent="Walls"]
+[node name="hills_layer3" type="Sprite" parent="hills_layers"]
 editor/display_folded = true
-position = Vector2( 672, 480 )
-__meta__ = {
-"_edit_group_": true
-}
+texture = ExtResource( 4 )
 
-[node name="Sprite" type="Sprite" parent="Walls/Wall3"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
+[node name="Tween" type="Tween" parent="hills_layers/hills_layer3"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall3"]
-shape = SubResource( 1 )
-
-[node name="Wall4" type="StaticBody2D" parent="Walls"]
+[node name="hills_layer4" type="Sprite" parent="hills_layers"]
 editor/display_folded = true
-position = Vector2( 736, 480 )
-__meta__ = {
-"_edit_group_": true
-}
+texture = ExtResource( 5 )
 
-[node name="Sprite" type="Sprite" parent="Walls/Wall4"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
+[node name="Tween" type="Tween" parent="hills_layers/hills_layer4"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall4"]
-shape = SubResource( 1 )
-
-[node name="Wall5" type="StaticBody2D" parent="Walls"]
+[node name="hills_layer5" type="Sprite" parent="hills_layers"]
 editor/display_folded = true
-position = Vector2( 736, 416 )
-__meta__ = {
-"_edit_group_": true
-}
+texture = ExtResource( 6 )
 
-[node name="Sprite" type="Sprite" parent="Walls/Wall5"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
+[node name="Tween" type="Tween" parent="hills_layers/hills_layer5"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall5"]
-shape = SubResource( 1 )
-
-[node name="Wall6" type="StaticBody2D" parent="Walls"]
+[node name="hills_layer6" type="Sprite" parent="hills_layers"]
 editor/display_folded = true
-position = Vector2( 800, 416 )
-__meta__ = {
-"_edit_group_": true
-}
+texture = ExtResource( 7 )
 
-[node name="Sprite" type="Sprite" parent="Walls/Wall6"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
+[node name="Tween" type="Tween" parent="hills_layers/hills_layer6"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall6"]
-shape = SubResource( 1 )
-
-[node name="Wall7" type="StaticBody2D" parent="Walls"]
-editor/display_folded = true
-position = Vector2( 864, 416 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/Wall7"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall7"]
-shape = SubResource( 1 )
-
-[node name="Wall8" type="StaticBody2D" parent="Walls"]
-editor/display_folded = true
-position = Vector2( 928, 416 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/Wall8"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall8"]
-shape = SubResource( 1 )
-
-[node name="Wall9" type="StaticBody2D" parent="Walls"]
-editor/display_folded = true
-position = Vector2( 992, 416 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Walls/Wall9"]
-modulate = Color( 0, 0, 0, 1 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall9"]
-shape = SubResource( 1 )
+[node name="stanza1" type="TextEdit" parent="."]
+margin_left = 448.0
+margin_top = 64.0
+margin_right = 800.0
+margin_bottom = 160.0
+text = "at the waning of  the century,
+with the weather warming
+and even the seasons losing their way,"
