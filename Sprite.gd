@@ -10,7 +10,7 @@ onready var tween = get_node("Tween")
 func _ready():
 	print("this function is running")
 	tween.interpolate_property(self, "modulate:a", self.modulate.a, 0.0, 1,
-        Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+        Tween.TRANS_QUAD, Tween.EASE_IN)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
