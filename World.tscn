@@ -1,13 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://Hills Layer 01.png" type="Texture" id=2]
-[ext_resource path="res://Sprite.gd" type="Script" id=3]
-[ext_resource path="res://Hills Layer 02.png" type="Texture" id=4]
-[ext_resource path="res://Hills Layer 03.png" type="Texture" id=5]
-[ext_resource path="res://Hills Layer 04.png" type="Texture" id=6]
-[ext_resource path="res://Hills Layer 05.png" type="Texture" id=7]
-[ext_resource path="res://Hills Layer 06.png" type="Texture" id=8]
+[ext_resource path="res://Hills Layer 02.png" type="Texture" id=3]
+[ext_resource path="res://Hills Layer 03.png" type="Texture" id=4]
+[ext_resource path="res://Hills Layer 04.png" type="Texture" id=5]
+[ext_resource path="res://Hills Layer 05.png" type="Texture" id=6]
+[ext_resource path="res://Hills Layer 06.png" type="Texture" id=7]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -16,61 +15,61 @@ script = ExtResource( 1 )
 position = Vector2( 510, 300 )
 scale = Vector2( 2.2, 2.2 )
 
-[node name="hills_layer1" type="Sprite" parent="hills_layers"]
+[node name="hills_layer0" type="Sprite" parent="hills_layers"]
 editor/display_folded = true
+modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, -1.52588e-005 )
 texture = ExtResource( 2 )
-script = ExtResource( 3 )
+
+[node name="Tween" type="Tween" parent="hills_layers/hills_layer0"]
+
+[node name="hills_layer1" type="Sprite" parent="hills_layers"]
+editor/display_folded = true
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 3 )
 
 [node name="Tween" type="Tween" parent="hills_layers/hills_layer1"]
 
 [node name="hills_layer2" type="Sprite" parent="hills_layers"]
 editor/display_folded = true
-visible = false
+modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 4 )
 
 [node name="Tween" type="Tween" parent="hills_layers/hills_layer2"]
 
 [node name="hills_layer3" type="Sprite" parent="hills_layers"]
 editor/display_folded = true
-visible = false
+modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 5 )
 
 [node name="Tween" type="Tween" parent="hills_layers/hills_layer3"]
 
 [node name="hills_layer4" type="Sprite" parent="hills_layers"]
 editor/display_folded = true
-visible = false
+modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 6 )
 
 [node name="Tween" type="Tween" parent="hills_layers/hills_layer4"]
 
 [node name="hills_layer5" type="Sprite" parent="hills_layers"]
 editor/display_folded = true
-visible = false
+modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 7 )
 
 [node name="Tween" type="Tween" parent="hills_layers/hills_layer5"]
 
-[node name="hills_layer6" type="Sprite" parent="hills_layers"]
-editor/display_folded = true
-visible = false
-texture = ExtResource( 8 )
-
-[node name="Tween" type="Tween" parent="hills_layers/hills_layer6"]
-
 [node name="poem" type="Node" parent="."]
 
-[node name="stanza_1" type="Polygon2D" parent="poem"]
+[node name="stanza_0" type="Polygon2D" parent="poem"]
 editor/display_folded = true
-modulate = Color( 0.968627, 0.937255, 0.894118, 0.784314 )
+modulate = Color( 0.968627, 0.937255, 0.894118, 0 )
 position = Vector2( 192.153, -320 )
 polygon = PoolVector2Array( 32, 384, 31.8467, 462.083, 319.838, 462.083, 320, 384 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="poem/stanza_1"]
+[node name="RichTextLabel" type="RichTextLabel" parent="poem/stanza_0"]
 modulate = Color( 0.0745098, 0.313726, 0.0901961, 1 )
 margin_left = 51.4076
 margin_top = 400.599
@@ -80,17 +79,18 @@ text = "at the waning of  the century,
 with the weather warming
 and even the seasons losing their way,"
 
-[node name="stanza_2" type="Polygon2D" parent="poem"]
+[node name="Tween" type="Tween" parent="poem/stanza_0"]
+
+[node name="stanza_1" type="Polygon2D" parent="poem"]
 editor/display_folded = true
-visible = false
-modulate = Color( 0.968627, 0.937255, 0.894118, 0.784314 )
+modulate = Color( 0.968627, 0.937255, 0.894118, 0 )
 position = Vector2( 192.153, -224 )
 polygon = PoolVector2Array( 32, 384, 31.8467, 462.083, 319.838, 462.083, 320, 384 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="poem/stanza_2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="poem/stanza_1"]
 modulate = Color( 0.0745098, 0.313726, 0.0901961, 1 )
 margin_left = 51.0
 margin_top = 401.0
@@ -100,17 +100,18 @@ text = "listen to me. It is time
 to sit still, to tilt your face
 to the light and catch the notes of music"
 
-[node name="stanza_3" type="Polygon2D" parent="poem"]
+[node name="Tween" type="Tween" parent="poem/stanza_1"]
+
+[node name="stanza_2" type="Polygon2D" parent="poem"]
 editor/display_folded = true
-visible = false
-modulate = Color( 0.968627, 0.937255, 0.894118, 0.784314 )
+modulate = Color( 0.968627, 0.937255, 0.894118, 0 )
 position = Vector2( 192.153, -128 )
 polygon = PoolVector2Array( 32, 384, 31.8467, 462.083, 319.838, 462.083, 320, 384 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="poem/stanza_3"]
+[node name="RichTextLabel" type="RichTextLabel" parent="poem/stanza_2"]
 modulate = Color( 0.0745098, 0.313726, 0.0901961, 1 )
 margin_left = 51.0
 margin_top = 401.0
@@ -120,11 +121,33 @@ text = "which sweeten the tongue
 like snowflakes as they fall and melt
 this bare December morning."
 
+[node name="Tween" type="Tween" parent="poem/stanza_2"]
+
+[node name="stanza_3" type="Polygon2D" parent="poem"]
+editor/display_folded = true
+modulate = Color( 0.968627, 0.937255, 0.894118, 0 )
+position = Vector2( 504.153, -320 )
+polygon = PoolVector2Array( 32, 384, 31.8467, 462.083, 319.838, 462.083, 320, 384 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="poem/stanza_3"]
+modulate = Color( 0.0745098, 0.313726, 0.0901961, 1 )
+margin_left = 51.4076
+margin_top = 400.599
+margin_right = 302.408
+margin_bottom = 447.599
+text = "Your mouth was shaped for lullaby
+or hymn, and your refusal
+to sing bewilders"
+
+[node name="Tween" type="Tween" parent="poem/stanza_3"]
+
 [node name="stanza_4" type="Polygon2D" parent="poem"]
 editor/display_folded = true
-visible = false
-modulate = Color( 0.968627, 0.937255, 0.894118, 0.784314 )
-position = Vector2( 504.153, -320 )
+modulate = Color( 0.968627, 0.937255, 0.894118, 0 )
+position = Vector2( 504.153, -224 )
 polygon = PoolVector2Array( 32, 384, 31.8467, 462.083, 319.838, 462.083, 320, 384 )
 __meta__ = {
 "_edit_group_": true
@@ -136,15 +159,16 @@ margin_left = 51.4076
 margin_top = 400.599
 margin_right = 302.408
 margin_bottom = 447.599
-text = "Your mouth was shaped for lullaby
-or hymn, and your refusal
-to sing bewilders"
+text = "whole octaves of air. Enough
+abstinence. Each day
+that ends is gone, not a leaf is left"
+
+[node name="Tween" type="Tween" parent="poem/stanza_4"]
 
 [node name="stanza_5" type="Polygon2D" parent="poem"]
 editor/display_folded = true
-visible = false
-modulate = Color( 0.968627, 0.937255, 0.894118, 0.784314 )
-position = Vector2( 504.153, -224 )
+modulate = Color( 0.968627, 0.937255, 0.894118, 0 )
+position = Vector2( 504.153, -128 )
 polygon = PoolVector2Array( 32, 384, 31.8467, 462.083, 319.838, 462.083, 320, 384 )
 __meta__ = {
 "_edit_group_": true
@@ -156,32 +180,13 @@ margin_left = 51.4076
 margin_top = 400.599
 margin_right = 302.408
 margin_bottom = 447.599
-text = "whole octaves of air. Enough
-abstinence. Each day
-that ends is gone, not a leaf is left"
-
-[node name="stanza_6" type="Polygon2D" parent="poem"]
-editor/display_folded = true
-visible = false
-modulate = Color( 0.968627, 0.937255, 0.894118, 0.784314 )
-position = Vector2( 504.153, -128 )
-polygon = PoolVector2Array( 32, 384, 31.8467, 462.083, 319.838, 462.083, 320, 384 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="poem/stanza_6"]
-modulate = Color( 0.0745098, 0.313726, 0.0901961, 1 )
-margin_left = 51.4076
-margin_top = 400.599
-margin_right = 302.408
-margin_bottom = 447.599
 text = "and soon enough it will be time
 to sleep under the sway
 of all that silence."
 
+[node name="Tween" type="Tween" parent="poem/stanza_5"]
+
 [node name="author" type="RichTextLabel" parent="poem"]
-visible = false
 modulate = Color( 0.623529, 0.45098, 0.45098, 1 )
 margin_left = 677.282
 margin_top = 374.415
