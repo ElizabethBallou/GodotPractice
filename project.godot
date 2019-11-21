@@ -16,8 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Godot Practice"
-run/main_scene="res://World.tscn"
+run/main_scene="res://TitleScene.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/height=512
 
 [rendering]
 

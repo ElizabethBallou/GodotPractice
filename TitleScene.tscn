@@ -1,7 +1,41 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Global.gd" type="Script" id=1]
+[ext_resource path="res://full forest.png" type="Texture" id=2]
+[ext_resource path="res://full hills.png" type="Texture" id=3]
 
 [node name="TitleScene" type="Node2D"]
+script = ExtResource( 1 )
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( -0.902527, 0 )
 color = Color( 0.67451, 0.784314, 0.654902, 1 )
-polygon = PoolVector2Array( 0, 0, 1024, 0, 1024, 608, 0, 608 )
+polygon = PoolVector2Array( 0, 0, 1024, 0, 1024, 512, 512, 512, 0, 512 )
+
+[node name="The Waking" type="Button" parent="Polygon2D"]
+margin_left = 100.398
+margin_top = 224.0
+margin_right = 228.398
+margin_bottom = 256.0
+rect_scale = Vector2( 1.3, 1.3 )
+text = "\"The Waking\""
+
+[node name="December 18 For M" type="Button" parent="Polygon2D"]
+margin_left = 612.903
+margin_top = 224.0
+margin_right = 767.903
+margin_bottom = 256.0
+rect_scale = Vector2( 1.3, 1.3 )
+text = "\"December 18: For M\""
+
+[node name="forest" type="Sprite" parent="Polygon2D"]
+position = Vector2( 256.903, 384 )
+scale = Vector2( 0.341341, 0.33318 )
+texture = ExtResource( 2 )
+
+[node name="hills" type="Sprite" parent="Polygon2D"]
+position = Vector2( 768.903, 384 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 3 )
+[connection signal="pressed" from="Polygon2D/The Waking" to="." method="_on_The_Waking_pressed"]
+[connection signal="pressed" from="Polygon2D/December 18 For M" to="." method="_on_December_18_For_M_pressed"]
