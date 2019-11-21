@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://World.gd" type="Script" id=1]
+[ext_resource path="res://LindaPastanPoem.gd" type="Script" id=1]
 [ext_resource path="res://Hills Layer 01.png" type="Texture" id=2]
 [ext_resource path="res://Hills Layer 02.png" type="Texture" id=3]
 [ext_resource path="res://Hills Layer 03.png" type="Texture" id=4]
@@ -204,3 +204,11 @@ margin_right = 256.0
 margin_bottom = 50.0
 rect_scale = Vector2( 0.8, 0.8 )
 text = "press spacebar to continue poem"
+
+[node name="MainSceneButton" type="Button" parent="."]
+margin_left = 863.566
+margin_top = 479.248
+margin_right = 1009.57
+margin_bottom = 499.248
+text = "return to main menu"
+[connection signal="pressed" from="MainSceneButton" to="." method="_on_Button_pressed"]
