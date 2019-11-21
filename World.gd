@@ -35,14 +35,17 @@ onready var hill_layers = [hills_layer0,
 var stanzaToShow = 0
 var hillToShow = 0
 
+var tweenTime = 1.2
+
 onready var SpriteTween = get_node("hills_layers/hills_layer" + str(hillToShow) + "/Tween")
 onready var TextTween = get_node("poem/stanza_" + str(stanzaToShow) + "/Tween")
+onready var AuthorTween = get_node("poem/author/Tween")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	TextTween.interpolate_property(poem_stanzas[0], "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), 2.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	TextTween.interpolate_property(poem_stanzas[0], "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), tweenTime, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	TextTween.start()
-	SpriteTween.interpolate_property(hill_layers[0], "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), 2.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	SpriteTween.interpolate_property(hill_layers[0], "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), tweenTime, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	SpriteTween.start()
 	stanzaToShow = stanzaToShow + 1
 	hillToShow = hillToShow + 1
@@ -54,25 +57,22 @@ func _input(event):
 	pass
 	
 func show_new_section():
+	print_debug(hillToShow)
+	print_debug(stanzaToShow)
 	if stanzaToShow >=1 && stanzaToShow <= 5:
 		# poem_stanzas[stanzaToShow].show()
-		TextTween.interpolate_property(poem_stanzas[stanzaToShow], "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), 2.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
+		TextTween.interpolate_property(poem_stanzas[stanzaToShow], "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), tweenTime, Tween.TRANS_LINEAR, Tween.EASE_IN)
 		TextTween.start()
 		# hill_layers[hillToShow].show()
-		SpriteTween.interpolate_property(hill_layers[hillToShow], "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), 2.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
+		SpriteTween.interpolate_property(hill_layers[hillToShow], "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), tweenTime, Tween.TRANS_LINEAR, Tween.EASE_IN)
 		SpriteTween.start()
+		
+		if stanzaToShow == 5:
+			AuthorTween.interpolate_property($poem/author, "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), tweenTime, Tween.TRANS_LINEAR, Tween.EASE_IN)
+			AuthorTween.start()
+			
 		stanzaToShow = stanzaToShow + 1
 		hillToShow = hillToShow + 1
 		
-		if stanzaToShow == 6:
-			author_name.show()
+
 		
-	elif stanzaToShow == 7:
-		for x in range (0, poem_stanzas.size):
-			poem_stanzas[x].hide()
-		for x in range (0, hill_layers.size):
-			hill_layers[x].hide()
-		hill_layers[0].show()
-		poem_stanzas[0].show()
-		stanzaToShow = 1
-		hillToShow = 1

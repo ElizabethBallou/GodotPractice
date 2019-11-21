@@ -1,0 +1,155 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Forest Layer 0.png" type="Texture" id=1]
+[ext_resource path="res://Forest Layer 1.png" type="Texture" id=2]
+[ext_resource path="res://Forest Layer 2.png" type="Texture" id=3]
+[ext_resource path="res://Forest Layer 3.png" type="Texture" id=4]
+[ext_resource path="res://Forest Layer 4.png" type="Texture" id=5]
+[ext_resource path="res://Forest Layer 5.png" type="Texture" id=6]
+
+[node name="TheodoreRoethkePoem" type="Node2D"]
+
+[node name="poem" type="Node" parent="."]
+
+[node name="stanza_0" type="Polygon2D" parent="poem"]
+modulate = Color( 0.894118, 0.952941, 0.968627, 1 )
+position = Vector2( 151.645, -301.379 )
+polygon = PoolVector2Array( 32, 384, -0.153, 384, -0.165329, 464.734, 159.726, 464.767, 351.7, 464.513, 351.847, 384 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="poem/stanza_0"]
+modulate = Color( 0.0901961, 0.117647, 0.196078, 1 )
+margin_left = 26.0664
+margin_top = 401.454
+margin_right = 305.066
+margin_bottom = 448.454
+text = "I wake to sleep, and take my waking slow.   
+I feel my fate in what I cannot fear.   
+I learn by going where I have to go."
+
+[node name="stanza_1" type="Polygon2D" parent="poem"]
+modulate = Color( 0.894118, 0.952941, 0.968627, 1 )
+position = Vector2( 151.492, -205.379 )
+polygon = PoolVector2Array( 32, 384, -0.153, 384, -0.165329, 464.734, 159.726, 464.767, 351.97, 464.648, 352, 384 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="poem/stanza_1"]
+modulate = Color( 0.0901961, 0.117647, 0.196078, 1 )
+margin_left = 26.0
+margin_top = 401.0
+margin_right = 321.0
+margin_bottom = 448.0
+text = " We think by feeling. What is there to know?   
+I hear my being dance from ear to ear.   
+I wake to sleep, and take my waking slow."
+
+[node name="stanza_2" type="Polygon2D" parent="poem"]
+modulate = Color( 0.894118, 0.952941, 0.968627, 1 )
+position = Vector2( 151.492, -109.379 )
+polygon = PoolVector2Array( 32, 384, -0.153, 384, -0.165329, 464.734, 159.726, 464.767, 351.908, 464.763, 352, 384 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="poem/stanza_2"]
+modulate = Color( 0.0901961, 0.117647, 0.196078, 1 )
+margin_left = 26.0
+margin_top = 401.0
+margin_right = 351.0
+margin_bottom = 448.0
+text = "  Of those so close beside me, which are you?   
+God bless the Ground!   I shall walk softly there,   
+And learn by going where I have to go."
+
+[node name="stanza_3" type="Polygon2D" parent="poem"]
+modulate = Color( 0.894118, 0.952941, 0.968627, 1 )
+position = Vector2( 535.492, -301.379 )
+polygon = PoolVector2Array( 32, 384, -0.153, 384, -0.165329, 464.734, 159.726, 464.767, 351.908, 464.763, 352, 384 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="poem/stanza_3"]
+modulate = Color( 0.0901961, 0.117647, 0.196078, 1 )
+margin_left = 26.0
+margin_top = 401.0
+margin_right = 351.0
+margin_bottom = 448.0
+text = " Light takes the Tree; but who can tell us how?   
+The lowly worm climbs up a winding stair;   
+I wake to sleep, and take my waking slow."
+
+[node name="stanza_4" type="Polygon2D" parent="poem"]
+modulate = Color( 0.894118, 0.952941, 0.968627, 1 )
+position = Vector2( 535.492, -205.379 )
+polygon = PoolVector2Array( 32, 384, -0.153, 384, -0.165329, 464.734, 159.726, 464.767, 351.908, 464.763, 352, 384 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="poem/stanza_4"]
+modulate = Color( 0.0901961, 0.117647, 0.196078, 1 )
+margin_left = 26.0
+margin_top = 401.0
+margin_right = 351.0
+margin_bottom = 448.0
+text = "Great Nature has another thing to do   
+To you and me; so take the lively air,   
+And, lovely, learn by going where to go."
+
+[node name="stanza_5" type="Polygon2D" parent="poem"]
+modulate = Color( 0.894118, 0.952941, 0.968627, 1 )
+position = Vector2( 535.327, -109.379 )
+polygon = PoolVector2Array( 32, 384, -0.153, 384, -0.165329, 464.734, 159.726, 464.767, 351.908, 464.763, 352, 384 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="poem/stanza_5"]
+modulate = Color( 0.0901961, 0.117647, 0.196078, 1 )
+margin_left = 25.5123
+margin_top = 395.148
+margin_right = 331.512
+margin_bottom = 455.148
+text = "This shaking keeps me steady. I should know.   
+What falls away is always. And is near.   
+I wake to sleep, and take my waking slow.   
+I learn by going where I have to go."
+
+[node name="RichTextLabel" type="RichTextLabel" parent="poem"]
+margin_left = 757.389
+margin_top = 363.51
+margin_right = 885.389
+margin_bottom = 386.51
+text = "-Theodore Roethke"
+
+[node name="forest_layers" type="Node2D" parent="."]
+position = Vector2( 510, 300 )
+
+[node name="forest_layers_0" type="Sprite" parent="forest_layers"]
+texture = ExtResource( 1 )
+
+[node name="forest_layers_1" type="Sprite" parent="forest_layers"]
+position = Vector2( 0, 240.767 )
+texture = ExtResource( 2 )
+
+[node name="forest_layers_2" type="Sprite" parent="forest_layers"]
+position = Vector2( 0, -142 )
+scale = Vector2( 1, 1.14 )
+texture = ExtResource( 3 )
+
+[node name="forest_layers_3" type="Sprite" parent="forest_layers"]
+position = Vector2( 0, 81 )
+texture = ExtResource( 4 )
+
+[node name="forest_layers_4" type="Sprite" parent="forest_layers"]
+position = Vector2( 0, 81 )
+texture = ExtResource( 5 )
+
+[node name="forest_layers_5" type="Sprite" parent="forest_layers"]
+position = Vector2( 0, 81.4543 )
+texture = ExtResource( 6 )

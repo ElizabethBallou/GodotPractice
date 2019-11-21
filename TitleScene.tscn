@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="TitleScene" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color( 0.67451, 0.784314, 0.654902, 1 )
+polygon = PoolVector2Array( 0, 0, 1024, 0, 1024, 608, 0, 608 )
