@@ -28,6 +28,10 @@ onready var forest_objects = [forest_object_0,
 					forest_object_3,
 					forest_object_4,
 					forest_object_5]
+					
+onready var RoethkeMusicTone1 = ToneDropdowns.musicSelectionArray[0]
+onready var RoethkeMusicTone2 = ToneDropdowns.musicSelectionArray[1]
+onready var RoethkeMusicTune3 = ToneDropdowns.musicSelectionArray[2]
 
 var stanzaToShow = 0
 var forestObjectToShow = 0
@@ -45,7 +49,7 @@ func _ready():
 	$MainSceneButton.hide()
 	TextTween.interpolate_property(poem_stanzas[0], "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), tweenTime, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	TextTween.start()
-	SpriteTween.interpolate_property(forest_objects[0], "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), tweenTime, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	SpriteTween.interpolate_property(forest_objects[0], "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, .8), tweenTime, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	SpriteTween.start()
 	stanzaToShow = stanzaToShow + 1
 	forestObjectToShow = forestObjectToShow + 1
@@ -64,7 +68,7 @@ func show_new_section():
 		TextTween.interpolate_property(poem_stanzas[stanzaToShow], "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), tweenTime, Tween.TRANS_LINEAR, Tween.EASE_IN)
 		TextTween.start()
 		# hill_layers[hillToShow].show()
-		SpriteTween.interpolate_property(forest_objects[forestObjectToShow], "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), tweenTime, Tween.TRANS_LINEAR, Tween.EASE_IN)
+		SpriteTween.interpolate_property(forest_objects[forestObjectToShow], "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, .8), tweenTime, Tween.TRANS_LINEAR, Tween.EASE_IN)
 		SpriteTween.start()
 		
 		if stanzaToShow == 5:

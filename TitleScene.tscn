@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Global.gd" type="Script" id=1]
 [ext_resource path="res://full forest.png" type="Texture" id=2]
 [ext_resource path="res://full hills.png" type="Texture" id=3]
+[ext_resource path="res://ToneDropdowns.gd" type="Script" id=4]
 
 [node name="TitleScene" type="Node2D"]
 script = ExtResource( 1 )
@@ -37,5 +38,36 @@ texture = ExtResource( 2 )
 position = Vector2( 768.903, 384 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 3 )
+
+[node name="Tone Dropdowns" type="Control" parent="Polygon2D"]
+margin_left = 97.0
+margin_top = 64.0
+margin_right = 815.0
+margin_bottom = 104.0
+script = ExtResource( 4 )
+Choice0_path = NodePath("Choice0")
+Choice1_path = NodePath("Choice1")
+Choice2_path = NodePath("Choice2")
+
+[node name="Choice0" type="OptionButton" parent="Polygon2D/Tone Dropdowns"]
+margin_left = 63.9025
+margin_right = 167.902
+margin_bottom = 20.0
+text = "First Tone"
+
+[node name="Choice1" type="OptionButton" parent="Polygon2D/Tone Dropdowns"]
+margin_left = 223.903
+margin_right = 345.903
+margin_bottom = 20.0
+text = "Second Tone"
+
+[node name="Choice2" type="OptionButton" parent="Polygon2D/Tone Dropdowns"]
+margin_left = 415.903
+margin_right = 523.903
+margin_bottom = 20.0
+text = "Third Tone"
 [connection signal="pressed" from="Polygon2D/The Waking" to="." method="_on_The_Waking_pressed"]
 [connection signal="pressed" from="Polygon2D/December 18 For M" to="." method="_on_December_18_For_M_pressed"]
+[connection signal="item_selected" from="Polygon2D/Tone Dropdowns/Choice0" to="Polygon2D/Tone Dropdowns" method="_on_Choice0_item_selected"]
+[connection signal="item_selected" from="Polygon2D/Tone Dropdowns/Choice1" to="Polygon2D/Tone Dropdowns" method="_on_Choice1_item_selected"]
+[connection signal="item_selected" from="Polygon2D/Tone Dropdowns/Choice2" to="Polygon2D/Tone Dropdowns" method="_on_Choice2_item_selected"]

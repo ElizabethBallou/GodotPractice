@@ -71,6 +71,7 @@ func show_new_section():
 		if stanzaToShow == 5:
 			AuthorTween.interpolate_property($poem/author, "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), tweenTime, Tween.TRANS_LINEAR, Tween.EASE_IN)
 			AuthorTween.start()
+			$MainSceneButton.show()
 			
 		stanzaToShow = stanzaToShow + 1
 		hillToShow = hillToShow + 1

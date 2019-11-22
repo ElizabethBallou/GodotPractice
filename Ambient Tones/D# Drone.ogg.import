@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/D# Drone.ogg-a41d084c273d1438c31ad657139bfc79.oggstr"
+
+[deps]
+
+source_file="res://Ambient Tones/D# Drone.ogg"
+dest_files=[ "res://.import/D# Drone.ogg-a41d084c273d1438c31ad657139bfc79.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
