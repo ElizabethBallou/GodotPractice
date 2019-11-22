@@ -41,6 +41,10 @@ onready var SpriteTween = get_node("hills_layers/hills_layer" + str(hillToShow) 
 onready var TextTween = get_node("poem/stanza_" + str(stanzaToShow) + "/Tween")
 onready var AuthorTween = get_node("poem/author/Tween")
 
+onready var PastanMusicTone0 = get_node("Music/A_Drone")
+onready var PastanMusicTone1 = get_node("Music/D_Drone")
+onready var PastanMusicTone2 = get_node("Music/E_Drone")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$MainSceneButton.hide()
@@ -68,7 +72,14 @@ func show_new_section():
 		SpriteTween.interpolate_property(hill_layers[hillToShow], "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), tweenTime, Tween.TRANS_LINEAR, Tween.EASE_IN)
 		SpriteTween.start()
 		
+		if stanzaToShow == 1:
+			PastanMusicTone0.play(0)
+			
+		if stanzaToShow == 3:
+			PastanMusicTone1.play(1)
+		
 		if stanzaToShow == 5:
+			PastanMusicTone2.play(2)
 			AuthorTween.interpolate_property($poem/author, "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), tweenTime, Tween.TRANS_LINEAR, Tween.EASE_IN)
 			AuthorTween.start()
 			$MainSceneButton.show()
@@ -81,5 +92,8 @@ func show_new_section():
 
 
 func _on_Button_pressed():
+	PastanMusicTone0.stop()
+	PastanMusicTone1.stop()
+	PastanMusicTone2.stop()
 	print_debug("I'm getting clicked")
 	get_tree().change_scene("res://TitleScene.tscn")

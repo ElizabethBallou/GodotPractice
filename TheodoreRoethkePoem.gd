@@ -29,9 +29,9 @@ onready var forest_objects = [forest_object_0,
 					forest_object_4,
 					forest_object_5]
 					
-onready var RoethkeMusicTone1 = ToneDropdowns.musicSelectionArray[0]
-onready var RoethkeMusicTone2 = ToneDropdowns.musicSelectionArray[1]
-onready var RoethkeMusicTune3 = ToneDropdowns.musicSelectionArray[2]
+onready var RoethkeMusicTone0 = get_node("Music streams/C_Drone")
+onready var RoethkeMusicTone1 = get_node("Music streams/E_Drone")
+onready var RoethkeMusicTone2 = get_node("Music streams/G_Drone")
 
 var stanzaToShow = 0
 var forestObjectToShow = 0
@@ -71,7 +71,14 @@ func show_new_section():
 		SpriteTween.interpolate_property(forest_objects[forestObjectToShow], "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, .8), tweenTime, Tween.TRANS_LINEAR, Tween.EASE_IN)
 		SpriteTween.start()
 		
+		if stanzaToShow == 1:
+			RoethkeMusicTone0.play(0)
+		
+		if stanzaToShow == 3:
+			RoethkeMusicTone1.play(0)
+		
 		if stanzaToShow == 5:
+			RoethkeMusicTone2.play(0)
 			AuthorTween.interpolate_property($poem/Author, "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), tweenTime, Tween.TRANS_LINEAR, Tween.EASE_IN)
 			AuthorTween.start()
 			$MainSceneButton.show()
@@ -85,4 +92,7 @@ func show_new_section():
 
 func _on_MainSceneButton_pressed():
 	print_debug("I'm getting clicked")
+	RoethkeMusicTone0.stop()
+	RoethkeMusicTone1.stop()
+	RoethkeMusicTone2.stop()
 	get_tree().change_scene("res://TitleScene.tscn")

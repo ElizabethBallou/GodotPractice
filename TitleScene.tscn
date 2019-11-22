@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Global.gd" type="Script" id=1]
 [ext_resource path="res://full forest.png" type="Texture" id=2]
 [ext_resource path="res://full hills.png" type="Texture" id=3]
 [ext_resource path="res://ToneDropdowns.gd" type="Script" id=4]
+[ext_resource path="res://Quicksand-Regular.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 5 )
 
 [node name="TitleScene" type="Node2D"]
 script = ExtResource( 1 )
@@ -14,18 +19,18 @@ color = Color( 0.67451, 0.784314, 0.654902, 1 )
 polygon = PoolVector2Array( 0, 0, 1024, 0, 1024, 512, 512, 512, 0, 512 )
 
 [node name="The Waking" type="Button" parent="Polygon2D"]
-margin_left = 100.398
-margin_top = 224.0
-margin_right = 228.398
-margin_bottom = 256.0
+margin_left = 171.808
+margin_top = 221.784
+margin_right = 299.808
+margin_bottom = 253.784
 rect_scale = Vector2( 1.3, 1.3 )
 text = "\"The Waking\""
 
 [node name="December 18 For M" type="Button" parent="Polygon2D"]
-margin_left = 612.903
-margin_top = 224.0
-margin_right = 767.903
-margin_bottom = 256.0
+margin_left = 669.179
+margin_top = 220.676
+margin_right = 824.179
+margin_bottom = 252.676
 rect_scale = Vector2( 1.3, 1.3 )
 text = "\"December 18: For M\""
 
@@ -40,14 +45,11 @@ scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 3 )
 
 [node name="Tone Dropdowns" type="Control" parent="Polygon2D"]
-margin_left = 97.0
-margin_top = 64.0
-margin_right = 815.0
-margin_bottom = 104.0
+margin_left = 225.299
+margin_top = 172.471
+margin_right = 943.299
+margin_bottom = 212.471
 script = ExtResource( 4 )
-Choice0_path = NodePath("Choice0")
-Choice1_path = NodePath("Choice1")
-Choice2_path = NodePath("Choice2")
 
 [node name="Choice0" type="OptionButton" parent="Polygon2D/Tone Dropdowns"]
 margin_left = 63.9025
@@ -66,6 +68,15 @@ margin_left = 415.903
 margin_right = 523.903
 margin_bottom = 20.0
 text = "Third Tone"
+
+[node name="Title" type="RichTextLabel" parent="Polygon2D"]
+modulate = Color( 0.301961, 0.411765, 0.333333, 1 )
+margin_left = 186.734
+margin_top = 36.6654
+margin_right = 859.734
+margin_bottom = 164.665
+custom_fonts/normal_font = SubResource( 1 )
+text = "R E V E R I E S"
 [connection signal="pressed" from="Polygon2D/The Waking" to="." method="_on_The_Waking_pressed"]
 [connection signal="pressed" from="Polygon2D/December 18 For M" to="." method="_on_December_18_For_M_pressed"]
 [connection signal="item_selected" from="Polygon2D/Tone Dropdowns/Choice0" to="Polygon2D/Tone Dropdowns" method="_on_Choice0_item_selected"]
